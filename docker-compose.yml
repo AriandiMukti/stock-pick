@@ -1,5 +1,11 @@
-version: '2.1'
+version: '3.6'
 services:
+  redis:
+    image: 'bitnami/redis:latest'
+    ports:
+      - 6379:6379
+    environment:
+        - ALLOW_EMPTY_PASSWORD=yes
   zoo1:
     image: confluentinc/cp-zookeeper:7.3.0
     hostname: zoo1
